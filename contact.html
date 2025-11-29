@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact – Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1 class="app-name">Expense Tracker</h1>
+        <button class="back-btn" id="back-to-welcome">←</button>
+    </header>
+
+    <!-- MAIN CONTACT SECTION -->
+    <main class="contact-container">
+
+        <h2>Contact Me</h2>
+
+        <!-- CONTACT FORM -->
+        <form id="contact-form">
+            <input type="text" id="contact-name" class="form-input" placeholder="Full Name">
+            <input type="email" id="contact-email" class="form-input" placeholder="Email">
+            <textarea id="contact-message" class="form-input" placeholder="Your Message"></textarea>
+
+            <button type="submit" id="send-message-btn">Send Message</button>
+        </form>
+
+        <!-- SUCCESS MESSAGE -->
+        <p id="contact-success-msg"></p>
+
+        <div class="divider">OR</div>
+
+        <!-- SOCIAL ICONS -->
+        <div class="social-icons">
+
+            <a href="#" id="linkedin-link" target="_blank" class="social-icon">
+                <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+            </a>
+
+            <a href="#" id="github-link" target="_blank" class="social-icon">
+                <img src="assets/icons/github.svg" alt="GitHub">
+            </a>
+
+        </div>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

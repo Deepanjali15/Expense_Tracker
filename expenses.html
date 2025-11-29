@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Expenses – Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <h1 class="app-name">All Expenses</h1>
+
+        <div class="right-options">
+            <span class="welcome-user">
+                <span id="username-display"></span>
+            </span>
+
+            <button id="logout-btn">⎋ Logout</button>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="all-expenses-container">
+
+        <!-- FILTERS -->
+        <div class="filters">
+            <select id="all-month-filter"></select>
+            <select id="all-category-filter"></select>
+        </div>
+
+        <!-- EXPENSES TABLE -->
+        <table id="expenses-table">
+            <thead>
+                <tr>
+                    <th>Title</th>
+                    <th>Amount</th>
+                    <th>Category</th>
+                    <th>Date</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <!-- Filled by JavaScript -->
+            </tbody>
+        </table>
+
+        <!-- FOOTER TOTAL -->
+        <footer class="expenses-footer">
+            Total for selected month: 
+            <span id="month-total"></span>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login – Expense Tracker</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1 class="app-name">Expense Tracker</h1>
+        <button class="back-btn" id="back-to-welcome">←</button>
+    </header>
+
+    <main class="login-container">
+        <h2>Login</h2>
+
+        <form id="login-form">
+            <input type="text" id="login-username" 
+                   class="form-input" placeholder="Username">
+
+            <input type="password" id="login-password" 
+                   class="form-input" placeholder="Password">
+
+            <button type="submit" id="login-btn-final">Login</button>
+        </form>
+
+        <p id="login-error-msg" class="error-msg"></p>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
