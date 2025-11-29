@@ -518,7 +518,7 @@ async function backupToGoogleSheets() {
     const data = await res.json();
 
     if (data && data.status === "success") {
-      alert("Backup successful! " + (data.rows_added ? `${data.rows_added} rows added.` : ""));
+      alert("Backup successful! ");
     } else {
       alert("Backup failed. Try again later.");
       console.error("Backup error:", data);
