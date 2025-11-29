@@ -1,13 +1,17 @@
-export default async function handler(req, res) {
+export default function handler(req, res) {
   if (req.method === "POST") {
-    console.log(req.body);  // shows in Vercel logs
 
-    // Return success response
+    const body = req.body;
+
+    console.log("Backup received:", body);
+
     return res.status(200).json({
-      message: "Backup received",
-      count: req.body.expenses.length
+      status: "success",
+      message: "Backup received successfully",
+      user: body.username,
+      count: body.expenses.length
     });
   }
 
-  res.status(405).json({ error: "Method not allowed" });
+  return res.status(405).json({ error: "Method not allowed" });
 }
