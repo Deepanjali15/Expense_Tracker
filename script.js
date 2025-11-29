@@ -491,7 +491,7 @@ function deleteExpense(id) {
 /* ---------------------------
    CLIENT: Backup -> Google Sheets
 ----------------------------*/
-const BACKUP_ENDPOINT = "https://script.google.com/macros/s/AKfycbwaa-byyXY_jNXWOBhqdl5xLLRqyztu23KLVBkEUe1BunQEUK3rFZ0EvmiloUt0C9U/exec"; // replace
+const BACKUP_ENDPOINT = "/api/backup.js"; // replace
 
 async function backupToGoogleSheets() {
   const currentUser = localStorage.getItem("currentUser");
