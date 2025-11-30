@@ -1,6 +1,4 @@
-/* ---------------------------------------------------
-   RESET + BASE
---------------------------------------------------- */
+/* BASIC */
 * {
     margin: 0;
     padding: 0;
@@ -28,9 +26,7 @@ input, select, textarea {
     outline: none;
 }
 
-/* ---------------------------------------------------
-   🌞 LIGHT MODE VARIABLES
---------------------------------------------------- */
+/* LIGHT MODE */
 :root {
     --bg: #ccc3f7;
     --card: #c2b6fc;
@@ -41,9 +37,7 @@ input, select, textarea {
     --shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
-/* ---------------------------------------------------
-   🌙 DARK MODE VARIABLES
---------------------------------------------------- */
+/* DARK MODE */
 body.dark {
     --bg: #35114f;
     --card: #573173;
@@ -54,9 +48,7 @@ body.dark {
     --shadow: 0 4px 12px rgba(0,0,0,0.4);
 }
 
-/* ---------------------------------------------------
-   GLOBAL LAYOUT
---------------------------------------------------- */
+/* GLOBAL LAYOUT */
 header {
     display: flex;
     justify-content: space-between;
@@ -86,9 +78,7 @@ main {
     color: var(--text);
 }
 
-/* ---------------------------------------------------
-   FORM + BUTTON BASICS
---------------------------------------------------- */
+/* FORM + BUTTON  */
 .form-input {
     background: #fff;
     border-radius: 10px;
@@ -121,9 +111,7 @@ button:hover {
     display: none;
 }
 
-/* ---------------------------------------------------
-   WELCOME PAGE
---------------------------------------------------- */
+/* WELCOME PAGE */
 .welcome-container {
     text-align: center;
     margin-top: 80px;
@@ -153,9 +141,7 @@ button:hover {
     opacity: 0.75;
 }
 
-/* ---------------------------------------------------
-   SIGN UP PAGE
---------------------------------------------------- */
+/*  SIGN UP PAGE */
 .signup-container {
     max-width: 400px;
     margin: 60px auto;
@@ -179,9 +165,7 @@ button:hover {
     cursor: pointer;
 }
 
-/* ---------------------------------------------------
-   LOGIN PAGE
---------------------------------------------------- */
+/* LOGIN PAGE */
 .login-container {
     max-width: 380px;
     margin: 60px auto;
@@ -202,9 +186,7 @@ button:hover {
     font-size: 0.9rem;
 }
 
-/* ---------------------------------------------------
-   DASHBOARD
---------------------------------------------------- */
+/* DASHBOARD */
 .dashboard-header .right-options {
     display: flex;
     align-items: center;
@@ -250,9 +232,7 @@ button:hover {
     text-align: center;
 }
 
-/* ---------------------------------------------------
-   CHARTS
---------------------------------------------------- */
+/* CHARTS */
 .charts {
     display: flex;
     flex-direction: column;
@@ -267,9 +247,47 @@ button:hover {
     min-height: 300px;
 }
 
-/* ---------------------------------------------------
-   ADD EXPENSE MODAL
---------------------------------------------------- */
+/* LAST 5 TRANSACTIONS TABLE */
+.last-transactions {
+    margin-top: 30px;
+}
+
+#last5-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+    background: var(--card);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+}
+
+#last5-table th {
+    padding: 12px 15px;
+    text-align: left;
+    font-weight: 600;
+    background: rgba(255,255,255,0.12);
+    color: var(--text);
+    font-size: 15px;
+}
+
+#last5-table td {
+    padding: 12px 15px;
+    font-size: 14px;
+    color: var(--text);
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
+
+#last5-table tr:nth-child(even) {
+    background: rgba(255,255,255,0.06);
+}
+
+#last5-table tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* ADD EXPENSE MODAL */
 .modal {
     position: fixed;
     top: 0; left: 0;
@@ -291,9 +309,22 @@ button:hover {
     box-shadow: var(--shadow);
 }
 
+.modal-content input,
+.modal-content select,
+.modal-content textarea {
+    width: 100%;
+    margin-bottom: 12px;
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
 .modal-buttons {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
+    gap: 12px;
     margin-top: 20px;
 }
 
@@ -302,9 +333,16 @@ button:hover {
     color: var(--text);
 }
 
-/* ---------------------------------------------------
-   ALL EXPENSES PAGE
---------------------------------------------------- */
+.expense-datetime {
+    display: flex;
+    gap: 10px;
+}
+
+.expense-datetime input {
+    flex: 1;
+}
+
+/* ALL EXPENSES PAGE */
 .all-expenses-container {
     margin-top: 30px;
 }
@@ -342,9 +380,7 @@ button:hover {
     font-weight: bold;
 }
 
-/* ---------------------------------------------------
-   CONTACT PAGE
---------------------------------------------------- */
+/* CONTACT PAGE */
 .contact-container {
     max-width: 480px;
     margin: 40px auto;

@@ -20,6 +20,7 @@
             </span>
 
             <button id="theme-toggle">☾</button>
+            <button id="contact-btn">Contact</button>
             <button id="logout-btn">⎋ Logout</button>
         </div>
     </header>
@@ -61,13 +62,12 @@
             <h3>Last 5 Transactions</h3>
 
             <table id="last5-table">
-                <!-- Filled by JavaScript -->
             </table>
         </section>
 
     </main>
 
-    <!-- ADD EXPENSE MODAL -->
+    <!-- THE EXPENSE MODAL -->
     <div id="add-expense-modal" class="modal hidden">
         <div class="modal-content">
 
@@ -78,8 +78,11 @@
 
             <select id="expense-category"></select>
 
-            <input type="date" id="expense-date">
-            <input type="time" id="expense-time">
+            <div class="expense-datetime">
+                <input type="date" id="expense-date">
+                <input type="time" id="expense-time">
+            </div>
+
 
             <textarea id="expense-note" placeholder="Note (optional)"></textarea>
 
