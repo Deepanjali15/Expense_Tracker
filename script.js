@@ -532,15 +532,14 @@ async function backupToGoogleSheets() {
 /* ---------------------------
    CLIENT: Contact form -> Google Sheets
 ----------------------------*/
-const CONTACT_ENDPOINT = "https://script.google.com/macros/s/AKfycbzfw0PYI_x3WJZQniBNcwLhBYCUPF6H30X8RxlSy055BkO_JLV3zdI0CSOhBcAuSJT3rQ/exec"; // replace
+const CONTACT_ENDPOINT = "/api/contact.js";
 
 async function sendContactMessage(e) {
-  // e is optional if you call directly; otherwise handle from form submit
-  if (e && e.preventDefault) e.preventDefault();
+  if (e) e.preventDefault();
 
-  const name = document.getElementById("contact-name").value?.trim();
-  const email = document.getElementById("contact-email").value?.trim();
-  const message = document.getElementById("contact-message").value?.trim();
+  const name = document.getElementById("contact-name").value.trim();
+  const email = document.getElementById("contact-email").value.trim();
+  const message = document.getElementById("contact-message").value.trim();
   const successMsg = document.getElementById("contact-success-msg");
 
   if (!name || !email || !message) {
@@ -548,30 +547,30 @@ async function sendContactMessage(e) {
     return;
   }
 
-  const payload = { full_name: name, email, message };
-
   try {
     const res = await fetch(CONTACT_ENDPOINT, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(payload)
+      body: JSON.stringify({ name, email, message })
     });
-    const data = await res.json();
 
-    if (data && data.status === "success") {
+    const data = await res.json();
+    console.log("Contact response:", data);
+
+    if (data.status === "success" || data.message === "Message received successfully") {
       successMsg.textContent = "Message sent — thank you!";
-      // clear form
       document.getElementById("contact-form").reset();
-      setTimeout(() => successMsg.textContent = "", 3500);
+      setTimeout(() => successMsg.textContent = "", 3000);
     } else {
       alert("Failed to send message. Try again later.");
-      console.error("Contact error:", data);
     }
+
   } catch (err) {
-    console.error(err);
-    alert("Contact request failed. Check your internet connection or endpoint.");
+    console.error("Contact error:", err);
+    alert("Contact request failed. Try again.");
   }
 }
+
 
 // Hook contact form submit (if not already)
 const contactForm = document.getElementById("contact-form");
